@@ -146,6 +146,7 @@ public class ProductServiceImpl implements ProductService {
 				addProductImgList(product, productImgHolderList);
 			}
 			try {
+				//测试
 				//更新商品信息
 				int effectedNum = productDao.updateProduct(product);
 				if (effectedNum <= 0) {
@@ -157,6 +158,7 @@ public class ProductServiceImpl implements ProductService {
 			}
 		}else {
 			return new ProductExecution(ProductStateEnum.EMPTY);
+			
 		}
 	}
 	
@@ -176,7 +178,8 @@ public class ProductServiceImpl implements ProductService {
 		productImgDao.deleteProductImgByProductId(productId);
 		
 	}
-
+	
+	
 	@Override
 	public ProductExecution getProductList(Product productCondition, int pageIndex, int pageSize) {
 		//页码转换成数据库的行码，并调用dao层取回指定页码的商品列表
